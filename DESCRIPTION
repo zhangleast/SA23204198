@@ -1,0 +1,17 @@
+Package: SA23204198
+Type: Package
+Title: Example functions for 'Statistical Computing' course
+Version: 1.0
+Date: 2023-12-01
+Author: Zhang Chengbo
+Maintainer:  Zhang Chengbo<zcb2023@ustc.edu.cn>
+Description: Several R and Rcpp function are included in.
+License: GPL (>= 2)
+Imports: Rcpp,ggplot2,forecast,zoo,TSA,stats4,bootstrap,DAAG,coda,lmtest,microbenchmark,boot
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+LinkingTo: Rcpp
+URL: http://github.com/zhangleast/SA23204198
+BugReports: http://github.com/zhangleast/SA23204198/issues
+RoxygenNote: 7.2.3
+Encoding: UTF-8
