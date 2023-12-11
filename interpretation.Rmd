@@ -1,0 +1,39 @@
+---
+title: "Homework"
+author: "Zhang Chengbo"
+date: "2023-12-5"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{interpretation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+#Some interpretation of the function
+
+本次大作业一共给出了三个函数，包括两个R语言函数
+与一个Rcpp函数。
+
+Rcpp函数主要考虑的是一个考虑使用 Gibbs 采样方法来生成服从目标联合概率密度$f(x, y)$的一条马氏链这一问题。 $$
+f(x, y) \propto\left(\begin{array}{l}
+n \\
+x
+\end{array}\right) y^{x+a-1}(1-y)^{n-x+b-1}, \quad x=0,1, \ldots, n, 0 \leq y \leq 1 .
+$$
+
+其中函数的自变量有采样总样本数量N，预烧样本数量burn，分布对应的参数a,b,n，最终
+生成一条总长度为N-burn的马氏链。
+
+而我们主要构建了两个R语言函数，
+两个函数均为所构建检验金融商品交易量与收益率因果关系的相关流程代码。
+在第一个R语言函数中我们对于原始高频数据进行了预处理的相应操作，对于股票
+价格进行对数差分，并绘制出交易量，交易量变化，对数价格，以及收益率的时序图，
+输出对数差分后的结果。
+
+在第二个R语言函数中则我们则是希望利用Euler-Maruyama方法对于随机分析中的随机微分方程Vacisek模型
+的三个参数进行参数最大似然估计，我们在该函数中给出了参数对应的极大似然函数
+表达，只需利用optim函数或mle函数就可得到最终的参数估计结果。
+
+
+而在数据文件data文件夹中则给出了一组真实的高频上海期货交易所
+黄金期货每秒交易量与价格量的半小时内数据。
